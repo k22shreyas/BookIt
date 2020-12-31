@@ -1,0 +1,37 @@
+select 3 tables
+SELECT movie.movie_name, user.user_name
+FROM ((seats
+INNER JOIN movie ON seats.movie_id = movie.movie_id)
+INNER JOIN user ON seats.user_id = user.user_id);
+
+
+//////////////////////////
+
+DELIMITER //
+CREATE PROCEDURE AVG_MARKS()
+BEGIN
+DECLARE ch_done INT DEFAULT 0;
+DECLARE C_A INT(10);
+DECLARE C_B INT(10);
+DECLARE C_net_amt DEC(10,2);
+
+DECLARE C_Tprice CURSOR FOR
+SELECT `price` AS A,`movie_id` AS B FROM `movie` WHERE `net_amt` IS NULL 
+FOR UPDATE;
+
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET ch_done = 1;
+
+OPEN C_Tprice;
+FETCH C_Tprice INTO C_A,C_B;
+SET C_net_amt=C_A + (C_A*0.08);
+UPDATE `movie` SET `net_amt`=C_net_amt where `movie_id`=C_B;
+
+CLOSE C_Tprice;
+
+IF(ch_done = 1) THEN 
+        -- handle the No data error!
+        SELECT 'Oh no!';
+    END IF;
+
+END;
+//
