@@ -35,3 +35,10 @@ IF(ch_done = 1) THEN
 
 END;
 //
+
+///////////////////////
+CREATE TRIGGER pass_crypt BEFORE UPDATE ON user FOR EACH ROW
+BEGIN
+SET new.pword := AES_ENCRYPT(new.pword,'kar'); 
+end;
+//column type has to be in Binary or VarBinary as the encrypted password might have blank spaces which VarChar removes while inserting which will result in NULL value//
