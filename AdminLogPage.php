@@ -4,11 +4,11 @@ session_start();
 <!DOCTYPE html>
 <html>
 <?php include('navbar1.html'); ?>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/styles.css">
   <body>
     <div class="user_login">
       <form action="AdminLogQ.php" method="POST" class="inputform">
-        <img src="laptop-user.png">
+        <img src="assets/icons/laptop-user.png">
         <p>Admin Login</p>
         <input type="text" id="username" name="username" placeholder="username" required><br></br>
         <input type="password" id="password" name="password" placeholder="password" required><br></br>
@@ -16,7 +16,7 @@ session_start();
       </form>
     </div>
     <div class="inputform" style="padding:200px 200px 0px 0px; width:500px; float:right;">
-      <img src="caution.png" class="cautionImg">
+      <img src="assets/icons/caution.png" class="cautionImg">
       <p>This page is restricted for users </p>
     </div>
     

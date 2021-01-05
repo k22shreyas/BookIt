@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "dbcon.php"; 
+include "db/dbcon.php"; 
 $sql = mysqli_query($conn, "SELECT * FROM movie");
 while($row = mysqli_fetch_array($sql)){
   $names[] = $row['movie_name'];
@@ -9,7 +9,7 @@ while($row = mysqli_fetch_array($sql)){
 <!DOCTYPE html>
 <html lang="en">
 <?php include('navbar1.html'); ?>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/styles.css">
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,25 +23,25 @@ while($row = mysqli_fetch_array($sql)){
 
 <div class="mySlides fade">
   <div class="numbertext"></div>
-  <img src="avn.jpg" style="width:100%">
+  <img src="assets/images/avn.jpg" style="width:100%">
   <div class="text">Avengers</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext"></div>
-  <img src="idiot.jpg" style="width:100%">
+  <img src="assets/images/idiot.jpg" style="width:100%">
   <div class="text">3 Idiots</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext"></div>
-  <img src="thor.jpg" style="width:100%">
+  <img src="assets/images/thor.jpg" style="width:100%">
   <div class="text">Thor</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext"></div>
-  <img src="phirherapheri.jpg" style="width:100%">
+  <img src="assets/images/phirherapheri.jpg" style="width:100%">
   <div class="text">Phir Hera Pheri</div>
 </div>
 
@@ -89,7 +89,7 @@ function showSlides() {
  }
  ?>
 </select>
-<input type="submit" value="select" class="desc_submit uni-btn" onclick="desc_select()">
+<type="submit" value="select" class="desc_submit uni-btn" onclick="desc_select()">
 </div>
 
 </body>

@@ -1,11 +1,11 @@
 <?php
 session_start();
-include "dbcon.php";
+include "db/dbcon.php";
 ?>
 <!DOCTYPE html>
 <?php include('Admin_navbar1.html'); ?>
 <html lang="en" dir="ltr">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/styles.css">
   <head>
     <meta charset="utf-8">
     <title>Adding Movie</title>

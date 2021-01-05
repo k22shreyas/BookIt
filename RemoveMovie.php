@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'dbcon.php';
+include 'db/dbcon.php';
 
 $sql = mysqli_query($conn, "SELECT * FROM movie");
 while($row = mysqli_fetch_array($sql)){
@@ -9,7 +9,7 @@ while($row = mysqli_fetch_array($sql)){
 ?>
 <html>
 <?php include('Admin_navbar1.html'); ?>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/styles.css">
 <body style="background-image: linear-gradient(to right,  #480048  , #c04848, #480048  );">
 <div class="form_display" style="float:left;  margin:150px 0px 0px 200px">
 <form action="" method="POST">

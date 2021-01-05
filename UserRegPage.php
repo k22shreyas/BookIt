@@ -4,14 +4,14 @@ session_start();
 <!DOCTYPE html>
 <html>
 <?php include('navbar1.html'); ?>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/styles.css">
   <head>
     <title>Movie and Chill</title>
   </head>
   <body>
   <div class="user_login">  
 	<form action="UserRegQ.php" method="POST" class="inputform">
-  <img src="laptop-user.png"><br></br>
+  <img src="assets/icons/laptop-user.png"><br></br>
   <input type="text" id="fullname" name="fullname" placeholder="fullname" required/><br></br>
   <input type="text" id="username" name="username" placeholder="username" required/><br><br>
   <input type="password" id="password" name="password" placeholder="password" required/><br><br>

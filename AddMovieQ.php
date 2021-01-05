@@ -1,6 +1,6 @@
 <?php
  session_start();
- require "dbcon.php";
+ require "db/dbcon.php";
  $Name = filter_input(INPUT_POST, 'Name');
  $Language = filter_input(INPUT_POST, 'Language');
  $Genre = filter_input(INPUT_POST, 'Genre');

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'dbcon.php';
+include 'db/dbcon.php';
 
 $sql = mysqli_query($conn, "SELECT * FROM movie");
 while($row = mysqli_fetch_array($sql)){
@@ -10,7 +10,7 @@ while($row = mysqli_fetch_array($sql)){
 
 <html>
 <?php include('navbar1.html'); ?>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/styles.css">
 <body>
 
 <div class="form_display" id="grad" style="float:left">
@@ -81,15 +81,3 @@ $seat_select = filter_input(INPUT_POST, 'seat_select');
 <?php } ?> 
 </body>
 </html>
-
-<?php 
-/*
- $sql1 = mysqli_query($conn, "SELECT * FROM seats WHERE date_time='2020-12-22 10:00:00'");
-while($row1 = mysqli_fetch_array($sql1)){
-  $seat_s[] = $row1['seat_no'];
-}
-foreach($seat_s as $seat_ss){
-  echo $seat_ss;
-}
-*/
-?>

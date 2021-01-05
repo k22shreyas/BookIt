@@ -1,6 +1,6 @@
 <?php
  session_start();
- require "dbcon.php";
+ require "db/dbcon.php";
  $Name = filter_input(INPUT_POST, 'Name');
  $Language = filter_input(INPUT_POST, 'Language');
  $Genre = filter_input(INPUT_POST, 'Genre');
@@ -12,7 +12,7 @@
  VALUES('$Name', '$Language', '$Genre','$Ratings','$Description','$Price')";
  $result=mysqli_query($conn, $sql);
 
- $result2 = mysqli_query($conn,"CALL AVG_MARKS()");
+ $result2 = mysqli_query($conn,"CALL TAX_CALC()");
     if($result2){
 
     echo '<script>alert("Proc Done");</script>';
