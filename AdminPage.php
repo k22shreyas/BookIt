@@ -12,12 +12,15 @@ session_start();
   <body>
   <div id="Admin">
     <h3 id="Adm_Wel">Welcome, Admin.</h3>
-    <div class="container">
+    <div class="container-admin">
       <div class="left">
         <button type="button" name="button" class="button button1"><a href="AddMovie.php" style="text-decoration:none;">Add a new Movie</a></button>
       </div>
       <div class="right">
         <button type="button" name="button" class="button button2"><a href="RemoveMovie.php" style="text-decoration:none;">Remove a Movie</a></button>
+        </div>
+        <div class="mid">
+        <button type="button" name="button" class="button button3"><a href="booked_history.php" style="text-decoration:none;">Booked Ticket History</a></button>
         </div>
      </div>
     </div>

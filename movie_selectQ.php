@@ -16,6 +16,7 @@ $date_select = $_SESSION["session_date"];
 $time_select = $_SESSION["session_time"];
 //combining date and time
 $combinedDT = date('Y-m-d H:i:s', strtotime("$date_select $time_select"));
+$_SESSION["session_date_time"] = $combinedDT;
 
 $query = mysqli_query($conn,"SELECT * FROM seats WHERE user_id = '$temp_usr_id' AND movie_id = '$temp_mov_id' AND date_time = '$combinedDT'");
 $row = mysqli_fetch_assoc($query);
