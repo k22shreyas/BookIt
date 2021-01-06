@@ -1,5 +1,5 @@
 select 3 tables
-SELECT movie.movie_name, user.user_name
+SELECT movie.movie_name, user.username
 FROM ((seats
 INNER JOIN movie ON seats.movie_id = movie.movie_id)
 INNER JOIN user ON seats.user_id = user.user_id);
@@ -42,3 +42,20 @@ BEGIN
 SET new.pword := AES_ENCRYPT(new.pword,'kar'); 
 end;
 //column type has to be in Binary or VarBinary as the encrypted password might have blank spaces which VarChar removes while inserting which will result in NULL value//
+
+//
+ticket query
+
+SELECT movie.movie_name, user.username, snacks.popcorn, snacks.drink, seats.no_seat, movie.price , movie.net_amt AS incl_of_tax_for_1_ticket, movie.net_amt*seats.no_seat AS incl_of_tax_for_all_tickets 
+FROM (((seats 
+      INNER JOIN movie ON seats.movie_id = movie.movie_id) 
+      INNER JOIN user ON seats.user_id = user.user_id) 
+      INNER JOIN snacks on seats.seat_id = snacks.seat_id) 
+      WHERE seats.seat_id='28';
+
+//////////////////////////(for price,net_amt,snacks+price and total_amt)
+SELECT movie.movie_name, user.username, snacks.popcorn, snacks.drink, seats.no_seat, movie.price , (snacks.popcorn+snacks.drink)*50 AS snacks_amt, movie.net_amt*seats.no_seat AS incl_of_tax,((snacks.popcorn+snacks.drink)*50)+(movie.net_amt*seats.no_seat) AS net_total
+FROM (((seats 
+      INNER JOIN movie ON seats.movie_id = movie.movie_id) 
+      INNER JOIN user ON seats.user_id = user.user_id) 
+      INNER JOIN snacks on seats.seat_id = snacks.seat_id) 
