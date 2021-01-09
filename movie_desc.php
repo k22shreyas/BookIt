@@ -19,77 +19,19 @@ while($row = mysqli_fetch_array($sql)){
 </head>
 <body>
 
-<div class="slideshow-container">
-
-<div class="mySlides fade">
-  <div class="numbertext"></div>
-  <img src="assets/images/avn.jpg" style="width:100%">
-  <div class="text">Avengers</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext"></div>
-  <img src="assets/images/idiot.jpg" style="width:100%">
-  <div class="text">3 Idiots</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext"></div>
-  <img src="assets/images/thor.jpg" style="width:100%">
-  <div class="text">Thor</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext"></div>
-  <img src="assets/images/phirherapheri.jpg" style="width:100%">
-  <div class="text">Phir Hera Pheri</div>
-</div>
-
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
-
-<script>
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 4 seconds
-}
-</script>
-
 <div class="form_display" style="margin-right:100px;">
 <form action="" method="POST" id="movie_form">
 
 <div>
  <select name="movie_select" >
- <option value="No movie is selected" >[Choose Movie below]</option>
+ <option value="No movie is selected" >Choose Movie below</option>
  <?php
  foreach($names as $name){
    echo '<option value="'.$name.'">'.$name.'</option>';
  }
  ?>
 </select>
-<type="submit" value="select" class="desc_submit uni-btn" onclick="desc_select()">
+<input type="submit" value="select" class="desc_submit uni-btn" onclick="desc_select()">
 </div>
 
 </body>

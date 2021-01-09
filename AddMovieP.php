@@ -15,7 +15,11 @@
  $result2 = mysqli_query($conn,"CALL TAX_CALC()");
     if($result2){
 
-    echo '<script>alert("Proc Done");</script>';
+    echo ("<script LANGUAGE='JavaScript'>
+    window.alert('Succesfully Updated');
+    window.location.href='AdminPage.php';
+ </script>");
+    
     }
  mysqli_close($conn);
 

@@ -9,15 +9,15 @@ session_start();
     <div class="user_login" >
       <form action="UserLogQ.php" method="POST" class="inputform">
         <img src="assets/icons/laptop-user.png"><br></br>
-        <input type="text" id="username" name="username" placeholder="username" required><br></br>
-        <input type="password" id="password" name="password" placeholder="password" required><br></br>
-        <button type="submit" class="uni-btn">Login</button>
+        <input type="text" id="username" name="username" placeholder=" Username" required><br></br>
+        <input type="password" id="password" name="password" placeholder=" **********" required><br></br>
+        <input type="submit" value="Login" class="uni-btn">
 
       </form>
     </div>
-    <div class="user_login">
+    <div class="login_info">
       <form action="UserRegPage.php" class="inputform">
-        <p>New user?</p>
+        <p style="margin-bottom:20px">New user?</p>
         <input type="submit" value="Register" class="uni-btn">
   </body>
 </html>

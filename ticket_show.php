@@ -118,7 +118,7 @@ $conn->close();
                   Seats: <?php echo $no_seat; ?> 
                   </p>
                 </div>
-                <a href="other/print_ticket.php">Print</a>
+                <a href="#" class="aniBoo">Booked</a>
               </section>
             </article>
           </div>

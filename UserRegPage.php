@@ -9,22 +9,23 @@ session_start();
     <title>Movie and Chill</title>
   </head>
   <body>
-  <div class="user_login">  
+  <div class="user_login" style="margin:70px 0px 0px 120px;">  
 	<form action="UserRegQ.php" method="POST" class="inputform">
   <img src="assets/icons/laptop-user.png"><br></br>
-  <input type="text" id="fullname" name="fullname" placeholder="fullname" required/><br></br>
-  <input type="text" id="username" name="username" placeholder="username" required/><br><br>
-  <input type="password" id="password" name="password" placeholder="password" required/><br><br>
-  <input type="number" id="phone" name="phone" placeholder="phone" required/><br></br>
-  <input type="email" id="email" name="email" placeholder="email" required/><br></br>
+  <input type="text" id="fullname" name="fullname" placeholder=" Fullname" required/>
+  <input type="text" id="username" name="username" placeholder=" Username" required/><br><br>
+  <input type="password" id="password" name="password" placeholder=" **********" required/>
+  <input type="password" id="password" placeholder=" Confirm Password" required/><br></br>
+  <input type="number" id="phone" name="phone" placeholder=" Phone" required/>
+  <input type="email" id="email" name="email" placeholder=" Email" required/><br></br>
 
-   <input type="submit" value="Register"/>
+  <input type="submit" class="uni-btn" value="Register">
   </form>
 </div>
-<div class="user_login">
+<div class="login_info">
 <form action="UserLogPage.php" class="inputform">
-<p>Already an user?</p>
-<input type="submit" value="Login">
+<p style="margin-bottom:20px">Already an user?</p>
+<input type="submit" class="uni-btn" value="Login">
 </form>
 </div>
 

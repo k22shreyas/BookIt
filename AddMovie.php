@@ -11,27 +11,17 @@ include "db/dbcon.php";
     <title>Adding Movie</title>
   </head>
   <body>
-<div class="Movie_details">
-  <h1 style="text-align:center;margin-top:70px;">Enter movie details</h1><br>
-</div>
-<div class="form">
+<div class="add_form">
+<h1>ENTER MOVIE DETAILS</h1>
   <form action="AddMovieP.php" method="POST" class="inputform">
- 
-    <input type="text" id="Name" name="Name" placeholder="Name" required><br></br>
-    
-    <input type="text" id="Genre" name="Genre" placeholder="Genre" required><br></br>
-     
-    <input id="Language" name="Language" placeholder="Language" required><br></br>
-     
-    <input id="ratings" name="Ratings" placeholder="Ratings" required><br></br>
-    
-    <input id="Description" name="Description" placeholder="Description" required><br></br>
-
-    <input id="Price" name="Price" placeholder="Price" required><br></br>
-
-   <button type="submit" class="uni-btn">Create</button>
+    <input type="text" id="Name" name="Name" placeholder=" Name" required><br></br>    
+    <input type="text" id="Genre" name="Genre" placeholder=" Genre" required><br></br>     
+    <input id="Language" name="Language" placeholder=" Language" required><br></br>     
+    <input id="ratings" name="Ratings" placeholder=" Ratings" required><br></br>    
+    <input id="Description" name="Description" placeholder=" Description" required><br></br>
+    <input id="Price" name="Price" placeholder=" Price" required><br></br>
+   <input type="submit" class="uni-btn" value=" Create">
 </form>
-
 </div>
   </body>
 </html>
