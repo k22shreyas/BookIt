@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 06, 2021 at 06:56 PM
+-- Generation Time: Jan 09, 2021 at 06:42 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -127,7 +127,9 @@ INSERT INTO `seats` (`seat_id`, `date_time`, `movie_id`, `user_id`, `no_seat`) V
 (9, '2020-12-31 16:00:00', 2, 31, 2),
 (10, '2021-01-28 19:00:00', 2, 29, 5),
 (11, '2021-01-29 16:00:00', 2, 29, 6),
-(12, '2021-01-14 19:00:00', 2, 30, 5);
+(12, '2021-01-14 19:00:00', 2, 30, 5),
+(13, '2021-01-22 16:00:00', 1, 29, 10),
+(14, '2021-01-29 13:00:00', 1, 29, 6);
 
 -- --------------------------------------------------------
 
@@ -157,7 +159,9 @@ INSERT INTO `snacks` (`seat_id`, `popcorn`, `drink`) VALUES
 (9, 1, 1),
 (10, 1, 0),
 (11, 1, 0),
-(12, 1, 1);
+(12, 1, 1),
+(13, 1, 2),
+(14, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -181,7 +185,8 @@ INSERT INTO `ticket` (`ticket_id`, `seat_id`, `total_net_amt`) VALUES
 (5, 6, 1172),
 (6, 7, 1122),
 (7, 8, 1770),
-(8, 10, 1400);
+(8, 10, 1400),
+(9, 14, 2094);
 
 -- --------------------------------------------------------
 
@@ -267,19 +272,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `movie_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `movie_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `seats`
 --
 ALTER TABLE `seats`
-  MODIFY `seat_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `seat_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `user`
