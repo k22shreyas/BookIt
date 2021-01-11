@@ -12,10 +12,4 @@ Built mainly using
 
 ![HTML](https://github.com/shreyask22/MovieBookingSystem/blob/main/other/html.png?raw=true) ![php](https://github.com/shreyask22/MovieBookingSystem/blob/main/other/php.png?raw=true)![CSS](https://github.com/shreyask22/MovieBookingSystem/blob/main/other/css.png?raw=true)
 
-Database used
-
-![MySQL](https://github.com/shreyask22/MovieBookingSystem/blob/main/other/mysql.png?raw=true)
-
-and little use of
-
-![JS](https://github.com/shreyask22/MovieBookingSystem/blob/main/other/js.png?raw=true)
+![MySQL](https://github.com/shreyask22/MovieBookingSystem/blob/main/other/mysql.png?raw=true) ![JS](https://github.com/shreyask22/MovieBookingSystem/blob/main/other/js.png?raw=true)
