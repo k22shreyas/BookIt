@@ -33,7 +33,7 @@ $decrypt_pass = mysql_aes_decrypt($tmppass, $key);
     $row1 = mysqli_fetch_array($sql1);
     $_SESSION["session_user"]= $row1["user_id"];
 
-    header('Location: homepage.php');
+    header('Location: movie_desc.php');
     exit;
   }
   else{

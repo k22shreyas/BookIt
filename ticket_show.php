@@ -49,40 +49,30 @@ $conn->close();
   <tr class="table_items">
     <th>Name: </th>
     <td><?php echo $fullname; ?></td> 
-  </tr>
-  <tr>
     <th>Movie Name: </th>
     <td><?php echo $movie_name; ?></td>
   </tr>
   <tr>
     <th>Date: </th>
     <td><?php echo $date; ?></td>
-  </tr>
-  <tr>
     <th>Time: </th>
     <td><?php echo $time; ?></td>
   </tr>
   <tr>
     <th>Popcorn, Drink: </th>
-    <td><?php echo $popcorn. ', '.$drink; ?></td>
-  </tr>
-  <tr>
+    <td><?php echo $popcorn. 'x, '.$drink. 'x'; ?></td>
     <th>Price: </th>
     <td><?php echo $net_amt; ?>/-</td>
   </tr>
   <tr>
     <th>Seats: </th>
     <td><?php echo $no_seat; ?></td>
-  </tr>
-  <tr>
     <th>Amount for all seats: </th>
     <td><?php echo $amt_for_seats; ?>/-</td>
   </tr>
   <tr>
     <th>Snacks Price: </th>
     <td><?php echo $snacks_amt; ?>/-</td>
-  </tr>
-  <tr>
     <th>Net Amount: </th>
     <td><?php echo $net_total; ?>/-</td>
   </tr>

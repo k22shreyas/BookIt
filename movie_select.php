@@ -9,6 +9,7 @@ while($row = mysqli_fetch_array($sql)){
 ?>
 
 <html>
+ 
 <?php include('navbar1.html'); ?>
 <link rel="stylesheet" href="css/styles.css">
 <body>
