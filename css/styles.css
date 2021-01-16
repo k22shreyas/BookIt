@@ -190,7 +190,7 @@ margin: 0;
 }
 * {box-sizing: border-box;}
 body {font-family:sans-serif;}
-.mySlides {display: none;}
+.mySlides {display: none; border:1px; border-style:solid;}
 img {vertical-align: middle;}
 
 /* Slideshow container */
@@ -223,8 +223,8 @@ img {vertical-align: middle;}
 
 /* The dots/bullets/indicators */
 .dot {
-  height: 15px;
-  width: 15px;
+  height: 0px;
+  width: 0px;
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
@@ -259,6 +259,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  background-color: #000;
 }
 
 li {
@@ -343,11 +344,14 @@ body{
   color:black;
   background-color: #008080;
   background: url("../assets/images/best_wall.jpg") no-repeat center center fixed; 
+  
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  
+}
+body:before{
+  filter: blur(5px);
 }
 .show_display{
   font-family:sans-serif;
@@ -630,7 +634,7 @@ border-radius: 10px;
     font-size:26px;
     text-align:center;
     font-family:sans-serif;
-    margin-top:400px;
+    margin-top:300px;
     position:absolute;
     top:50%;
     left:50%;
@@ -644,7 +648,7 @@ border-radius: 10px;
      border-radius: 10px;
 }
 .table_display th, tr, td{
-  padding:15px 30px 15px 30px;
+  padding:15px 50px 15px 30px;
 }
 
 .history{
@@ -686,3 +690,4 @@ border-radius: 10px;
   border-radius: 07.5px;
   background: rgba(255, 255, 255, 0.2);
 }
+
