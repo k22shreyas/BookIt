@@ -18,12 +18,12 @@ $result = mysqli_query($conn,$sql);
 <h1>Booked Ticket History</h1>
 <table class="history_display">
 <tr class="table-list">
-<th class="table-list">Seat ID </th>
-<th class="table-list">Movie Name </th>
-<th class="table-list">Username </th>
-<th class="table-list">Date </th>
-<th class="table-list">Time </th>
-<th class="table-list">Seats </th>
+<th style="padding:5px;">Seat ID </th>
+<th style="padding:5px;">Movie Name </th>
+<th style="padding:5px;">Username </th>
+<th style="padding:5px;">Date </th>
+<th style="padding:5px;">Time </th>
+<th style="padding:5px;">Seats </th>
 </tr>
 <?php
 

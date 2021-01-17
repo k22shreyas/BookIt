@@ -36,6 +36,9 @@ if(isset($movie_del)){
     $sql2 = "DELETE FROM movie WHERE movie_name='$movie_del'";
     
     if (mysqli_query($conn, $sql2)) {
+      $sql3 = "DELETE FROM poster WHERE movie_name='$movie_del'";
+      mysqli_query($conn, $sql3);
+
       echo ("<script LANGUAGE='JavaScript'>
     window.alert('Movie Removed Successful');
     window.location.href='AdminPage.php';
@@ -44,8 +47,8 @@ if(isset($movie_del)){
     else {
       echo "Error: " . $sql2 . "<br>" . mysqli_error($conn);
     }
-    $sql3="SET FOREIGN_KEY_CHECKS=1;"; //Re-enable foregin key check
-    mysqli_query($conn, $sql3);
+    $sql4="SET FOREIGN_KEY_CHECKS=1;"; //Re-enable foregin key check
+    mysqli_query($conn, $sql4);
   }
 ?>
 
