@@ -18,7 +18,10 @@ Built mainly using
 Some screenshots
 
 ![php](https://github.com/shreyask22/DBMS-Project/blob/main/other/shot1.png?raw=true)
+
 ![php](https://github.com/shreyask22/DBMS-Project/blob/main/other/shot2.png?raw=true)
+
 ![php](https://github.com/shreyask22/DBMS-Project/blob/main/other/shot3.png?raw=true)
+
 ![php](https://github.com/shreyask22/DBMS-Project/blob/main/other/shot5.png?raw=true)
 
