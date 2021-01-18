@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 17, 2021 at 07:32 PM
+-- Generation Time: Jan 18, 2021 at 08:06 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -104,7 +104,10 @@ INSERT INTO `movie` (`movie_id`, `movie_name`, `movie_lang`, `movie_genre`, `rat
 (19, 'Doctor Strange', 'English', 'Action', 7, 'Doctor Strange is a 2016 American superhero film based on the Marvel Comics character of the same name. Produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures, it is the 14th film in the Marvel Cinematic Universe', 350, 8, 378),
 (20, 'Hobbit', 'English', 'Adventure', 10, 'The Hobbit is a film series consisting of three high fantasy adventure films directed by Peter Jackson. The three films are The Hobbit: An Unexpected Journey, The Hobbit: The Desolation of Smaug, and The Hobbit: The Battle of the Five Armies', 410, 8, 443),
 (21, 'Godzilla', 'English', 'Action', 9, 'The members of Monarch, an crypto-zoological organisation, must rely on the Godzilla and Mothra to defeat King Ghidorah and Rodan, after the former awakens other dormant Titans to destroy the world.', 460, 8, 497),
-(23, 'Wall E', 'English', 'Adventure', 9, 'A machine responsible for cleaning a waste-covered Earth meets another robot and falls in love with her. Together, they set out on a journey that will alter the fate of mankind.', 380, 8, 410);
+(23, 'Wall E', 'English', 'Adventure', 9, 'A machine responsible for cleaning a waste-covered Earth meets another robot and falls in love with her. Together, they set out on a journey that will alter the fate of mankind.', 380, 8, 410),
+(27, 'Central Intelligence', 'English', 'Comedy', 9, 'Dwayne Johnson and Kevin hart', 450, 8, 486),
+(29, 'Jurrasic World', 'English', 'Adventure', 8, 'A theme park showcasing genetically-engineered dinosaurs turns into a nightmare for its tourists when one of the dinosaurs escapes its enclosure. An ex-military animal expert steps up to save the day.', 550, 8, 594),
+(30, 'Sherlock Holms', 'English', 'Crime', 7, 'Sherlock Holmes is a fictional private detective created by British author Sir Arthur Conan Doyle.', 399, 8, 431);
 
 -- --------------------------------------------------------
 
@@ -126,7 +129,10 @@ INSERT INTO `poster` (`movie_name`, `poster_img`) VALUES
 ('Doctor Strange', 'strange.jpg'),
 ('Hobbit', 'hobbit.jpg'),
 ('Godzilla', 'godzilla.jpg'),
-('Wall E', 'walle.jpg');
+('Wall E', 'walle.jpg'),
+('Central Intelligence', 'hhh.jpg'),
+('Jurrasic World', 'jurrsic.jpg'),
+('Sherlock Holms', 'sherlock.jpg');
 
 -- --------------------------------------------------------
 
@@ -147,34 +153,10 @@ CREATE TABLE `seats` (
 --
 
 INSERT INTO `seats` (`seat_id`, `date_time`, `movie_id`, `user_id`, `no_seat`) VALUES
-(1, '2021-01-09 22:00:00', 1, 30, 2),
-(2, '2021-01-08 19:00:00', 2, 29, 4),
-(3, '2021-01-20 13:00:00', 1, 30, 1),
-(4, '2021-01-14 13:00:00', 1, 30, 2),
-(5, '2021-01-07 22:00:00', 1, 30, 3),
-(6, '2021-01-22 10:00:00', 1, 30, 3),
-(7, '2021-01-09 22:00:00', 1, 31, 3),
-(8, '2021-01-28 16:00:00', 2, 29, 6),
-(9, '2020-12-31 16:00:00', 2, 31, 2),
-(10, '2021-01-28 19:00:00', 2, 29, 5),
-(11, '2021-01-29 16:00:00', 2, 29, 6),
-(12, '2021-01-14 19:00:00', 2, 30, 5),
-(13, '2021-01-22 16:00:00', 1, 29, 10),
-(14, '2021-01-29 13:00:00', 1, 29, 6),
-(15, '2021-01-22 16:00:00', 2, 29, 5),
-(16, '2021-01-14 16:00:00', 1, 29, 2),
-(17, '2021-01-19 13:00:00', 2, 29, 1),
-(18, '2021-01-14 13:00:00', 1, 29, 1),
-(19, '2021-01-24 10:00:00', 9, 34, 2),
-(20, '2021-01-17 10:00:00', 20, 29, 2),
-(21, '2021-01-24 22:00:00', 19, 29, 2),
-(22, '2021-01-29 16:00:00', 18, 30, 1),
-(23, '2021-01-23 10:00:00', 23, 29, 2),
-(24, '2021-01-28 10:00:00', 21, 29, 1),
-(25, '2021-01-27 16:00:00', 23, 30, 3),
-(26, '2021-01-16 10:00:00', 23, 30, 3),
-(27, '2021-01-23 10:00:00', 19, 34, 4),
-(28, '2021-01-08 13:00:00', 18, 30, 3);
+(30, '2021-01-30 16:00:00', 20, 30, 2),
+(31, '2021-01-23 16:00:00', 19, 29, 1),
+(32, '2021-01-30 22:00:00', 27, 35, 3),
+(33, '2021-01-28 10:00:00', 30, 31, 2);
 
 -- --------------------------------------------------------
 
@@ -194,41 +176,14 @@ CREATE TABLE `snacks` (
 --
 
 INSERT INTO `snacks` (`seat_id`, `snack_name`, `snack_no`, `snack_amt`) VALUES
-(1, '1', 2, 0),
-(2, '1', 0, 0),
-(1, '1', 2, 0),
-(1, '1', 2, 0),
-(1, '1', 2, 0),
-(6, '3', 1, 0),
-(7, '2', 1, 0),
-(8, '3', 0, 0),
-(9, '1', 1, 0),
-(10, '1', 0, 0),
-(11, '1', 0, 0),
-(12, '1', 1, 0),
-(13, '1', 2, 0),
-(14, '1', 2, 0),
-(15, '2', 1, 0),
-(16, '1', 0, 0),
-(17, '1', 2, 0),
-(18, '0', 0, 0),
-(19, '0', 1, 0),
-(21, 'popcorn', 1, 100),
-(21, 'drink', 2, 100),
-(22, 'popcorn', 1, 100),
-(22, 'drink', 1, 100),
-(23, 'popcorn', 1, 100),
-(23, 'drink', 1, 100),
-(24, 'popcorn', 1, 100),
-(24, 'drink', 2, 100),
-(25, 'popcorn', 1, 100),
-(25, 'drink', 0, 100),
-(26, 'popcorn', 1, 100),
-(26, 'drink', 1, 100),
-(27, 'popcorn', 3, 50),
-(27, 'drink', 0, 50),
-(28, 'popcorn', 1, 50),
-(28, 'drink', 2, 50);
+(30, 'popcorn', 2, 50),
+(30, 'drink', 1, 50),
+(31, 'popcorn', 1, 50),
+(31, 'drink', 2, 50),
+(32, 'popcorn', 0, 50),
+(32, 'drink', 0, 50),
+(33, 'popcorn', 1, 50),
+(33, 'drink', 0, 50);
 
 -- --------------------------------------------------------
 
@@ -247,15 +202,9 @@ CREATE TABLE `ticket` (
 --
 
 INSERT INTO `ticket` (`ticket_id`, `seat_id`, `total_net_amt`) VALUES
-(3, 2, 1222),
-(4, 6, 1172),
-(5, 6, 1172),
-(6, 7, 1122),
-(7, 8, 1770),
-(8, 10, 1400),
-(9, 14, 2094),
-(10, 15, 1500),
-(11, 19, 374);
+(13, 30, 986),
+(14, 31, 478),
+(15, 33, 962);
 
 -- --------------------------------------------------------
 
@@ -350,19 +299,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `movie_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `movie_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `seats`
 --
 ALTER TABLE `seats`
-  MODIFY `seat_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `seat_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -378,7 +327,8 @@ ALTER TABLE `user`
 -- Constraints for table `poster`
 --
 ALTER TABLE `poster`
-  ADD CONSTRAINT `poster_ibfk_1` FOREIGN KEY (`movie_name`) REFERENCES `movie` (`movie_name`);
+  ADD CONSTRAINT `poster_ibfk_1` FOREIGN KEY (`movie_name`) REFERENCES `movie` (`movie_name`),
+  ADD CONSTRAINT `poster_ibfk_2` FOREIGN KEY (`movie_name`) REFERENCES `movie` (`movie_name`);
 
 --
 -- Constraints for table `seats`
