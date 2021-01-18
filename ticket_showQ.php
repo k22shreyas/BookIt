@@ -39,7 +39,7 @@ if (mysqli_num_rows($result1) > 0) {
   }
 }
 
-$sql2 = "SELECT SUM(snack_amt) AS snacksamt FROM snacks WHERE seat_id = '$temp_seat_id'";
+$sql2 = "SELECT snack_amt AS snacksamt FROM snacks WHERE seat_id = '$temp_seat_id'";
 $result2 = mysqli_query($conn,$sql2);
 if (mysqli_num_rows($result2) > 0) {
   while($row2 = mysqli_fetch_assoc($result2)) {
@@ -47,7 +47,8 @@ if (mysqli_num_rows($result2) > 0) {
     $snack_amt = $row2['snacksamt'];
   }
 }
-$total_amt = $snack_amt + $amt_for_seats;
+$snack_netamt = $snack_amt*$item;
+$total_amt = $snack_netamt + $amt_for_seats;
 
 
 $sql3 = "INSERT INTO ticket(seat_id, total_net_amt) VALUES('$temp_seat_id', '$total_amt')";

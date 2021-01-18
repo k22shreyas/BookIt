@@ -8,7 +8,6 @@ include('navbar1.html');
 <link rel="stylesheet" href="css/styles.css">
 <title>Snacks</title>
 <body>
-
 <div class="snacks_cont">
 <form action="snacksQ.php" method="POST">
 <h1>Choose Snacks</h1>

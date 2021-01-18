@@ -4,6 +4,8 @@ include "db/dbcon.php";
 
 $popcorn = filter_input(INPUT_POST, 'pop_select');
 $drink = filter_input(INPUT_POST, 'drink_select');
+$_SESSION["Spopcorn"] = $popcorn;
+$_SESSION["Sdrink"] = $drink;
 
 $temp_usr_id = $_SESSION["session_user"];
 $temp_mov_id = $_SESSION["session_movie_id"];

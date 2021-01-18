@@ -38,11 +38,11 @@ $decrypt_pass = mysql_aes_decrypt($tmppass, $key);
   }
   else{
     // INCORRECT PASSWORD
-    $error_message = "Incorrect Email Address or Password.";
+    $error_message = "Incorrect Username or Password.";
   }
 }
 else{
-  // EMAIL NOT REGISTERED
-  $error_message = "Incorrect Email Address or Password.";
+  // Username NOT REGISTERED
+  $error_message = "Incorrect Username or Password.";
 }
 ?>

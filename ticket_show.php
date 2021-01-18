@@ -30,16 +30,18 @@ if (mysqli_num_rows($result) > 0) {
 } else {
   echo "0 results";
 }
+
 $sql1 = "SELECT SUM(snack_no) AS items FROM snacks WHERE seat_id = '$temp_seat_id'";
 $result1 = mysqli_query($conn,$sql1);
 if (mysqli_num_rows($result1) > 0) {
   while($row1 = mysqli_fetch_assoc($result1)) {
   
     $item = $row1['items'];
+    
   }
 }
 
-$sql2 = "SELECT SUM(snack_amt) AS snacksamt FROM snacks WHERE seat_id = '$temp_seat_id'";
+$sql2 = "SELECT snack_amt AS snacksamt FROM snacks WHERE seat_id = '$temp_seat_id'";
 $result2 = mysqli_query($conn,$sql2);
 if (mysqli_num_rows($result2) > 0) {
   while($row2 = mysqli_fetch_assoc($result2)) {
@@ -47,8 +49,8 @@ if (mysqli_num_rows($result2) > 0) {
     $snack_amt = $row2['snacksamt'];
   }
 }
-$total_amt = $snack_amt + $amt_for_seats;
-
+$snack_netamt = $snack_amt*$item;
+$total_amt = $snack_netamt + $amt_for_seats;
 ?>
 
 <html>
@@ -79,7 +81,7 @@ $total_amt = $snack_amt + $amt_for_seats;
     <th>Time: </th>
     <td><?php echo $time; ?></td>
     <th>Snacks Price: </th>
-    <td><?php echo $snack_amt; ?>/-</td>
+    <td><?php echo $snack_netamt; ?>/-</td>
   </tr>
   <tr class="table_items">
     <th>Snacks: </th>
