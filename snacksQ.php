@@ -15,15 +15,20 @@ $row = mysqli_fetch_assoc($sql);
 $temp_seat_id= $row["seat_id"];
 $_SESSION["session_seat_id"] = $temp_seat_id;
 
-$query="INSERT INTO snacks(seat_id, popcorn, drink) VALUES('$temp_seat_id', '$popcorn', '$drink')";
+$query="INSERT INTO snacks(seat_id, snack_name, snack_no) VALUES('$temp_seat_id', 'popcorn', '$popcorn')";
 if ($conn->query($query)){
-  header("Location: ticket_show.php");
-}
+
+  $query="INSERT INTO snacks(seat_id, snack_name, snack_no) VALUES('$temp_seat_id', 'drink', '$drink')";
+  if ($conn->query($query)){
+    header("Location: ticket_show.php");
+  }
+  else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  }
 $conn->close();
 }
 else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-
-
+}
 ?>

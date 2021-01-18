@@ -4,7 +4,7 @@ include "db/dbcon.php";
 include('navbar1.html');
 $temp_seat_id = $_SESSION["session_seat_id"];
 
-$sql = "SELECT movie.movie_name, movie.net_amt, user.fullname, seats.date_time, snacks.popcorn, snacks.drink, seats.no_seat, movie.price , (snacks.popcorn+snacks.drink)*50 AS snacks_amt, movie.net_amt*seats.no_seat AS amt_for_seats,((snacks.popcorn+snacks.drink)*50)+(movie.net_amt*seats.no_seat) AS net_total 
+$sql = "SELECT movie.movie_name, movie.net_amt, user.fullname, seats.date_time, seats.no_seat, movie.net_amt , movie.net_amt*seats.no_seat AS amt_for_seats 
 FROM (((seats 
 INNER JOIN movie ON seats.movie_id = movie.movie_id) 
 INNER JOIN user ON seats.user_id = user.user_id) 
@@ -19,14 +19,9 @@ if (mysqli_num_rows($result) > 0) {
     $movie_name = $row["movie_name"];
     $fullname = $row["fullname"];
     $combinedDT = $row["date_time"];
-    $popcorn = $row["popcorn"];
-    $drink = $row["drink"];
     $no_seat = $row["no_seat"];
-    $price = $row["price"];
     $net_amt = $row["net_amt"];
     $amt_for_seats = $row["amt_for_seats"];
-    $snacks_amt = $row["snacks_amt"];
-    $net_total = $row["net_total"];
     //spliting date and time 
     $date = date('Y-m-d',strtotime($combinedDT));
     $time = date('H:i',strtotime($combinedDT));
@@ -35,8 +30,24 @@ if (mysqli_num_rows($result) > 0) {
 } else {
   echo "0 results";
 }
+$sql1 = "SELECT SUM(snack_no) AS items FROM snacks WHERE seat_id = '$temp_seat_id'";
+$result1 = mysqli_query($conn,$sql1);
+if (mysqli_num_rows($result1) > 0) {
+  while($row1 = mysqli_fetch_assoc($result1)) {
+  
+    $item = $row1['items'];
+  }
+}
 
-$conn->close();
+$sql2 = "SELECT SUM(snack_amt) AS snacksamt FROM snacks WHERE seat_id = '$temp_seat_id'";
+$result2 = mysqli_query($conn,$sql2);
+if (mysqli_num_rows($result2) > 0) {
+  while($row2 = mysqli_fetch_assoc($result2)) {
+
+    $snack_amt = $row2['snacksamt'];
+  }
+}
+$total_amt = $snack_amt + $amt_for_seats;
 
 ?>
 
@@ -49,72 +60,37 @@ $conn->close();
   <tr class="table_items">
     <th>Name: </th>
     <td><?php echo $fullname; ?></td> 
+    <th>Seats: </th>
+    <td><?php echo $no_seat; ?></td>
+  </tr>
+  <tr class="table_items">
     <th>Movie Name: </th>
     <td><?php echo $movie_name; ?></td>
-  </tr>
-  <tr>
-    <th>Date: </th>
-    <td><?php echo $date; ?></td>
-    <th>Time: </th>
-    <td><?php echo $time; ?></td>
-  </tr>
-  <tr>
-    <th>Popcorn, Drink: </th>
-    <td><?php echo $popcorn. 'x, '.$drink. 'x'; ?></td>
     <th>Price: </th>
     <td><?php echo $net_amt; ?>/-</td>
   </tr>
-  <tr>
-    <th>Seats: </th>
-    <td><?php echo $no_seat; ?></td>
-    <th>Amount for all seats: </th>
+  <tr class="table_items">
+    <th>Date: </th>
+    <td><?php echo $date; ?></td>
+    <th>Price(<?php echo $no_seat; ?>): </th>
     <td><?php echo $amt_for_seats; ?>/-</td>
   </tr>
-  <tr>
+  <tr class="table_items">
+    <th>Time: </th>
+    <td><?php echo $time; ?></td>
     <th>Snacks Price: </th>
-    <td><?php echo $snacks_amt; ?>/-</td>
+    <td><?php echo $snack_amt; ?>/-</td>
+  </tr>
+  <tr class="table_items">
+    <th>Snacks: </th>
+    <td><?php echo $item. ' item(s)'; ?></td>
     <th>Net Amount: </th>
-    <td><?php echo $net_total; ?>/-</td>
+    <td><?php echo $total_amt; ?>/-</td>
   </tr>
 </table>
 <form action="ticket_showQ.php" method="POST">
-<input type="submit" value="Proceed" class="uni-btn">
+<input type="submit" value="Proceed" class="uni-btn" style="margin:15px 0px 0px 0px;">
 </form>
-</div>
-    <section class="container">
-          <div class="row">
-          </div>
-          <div class="row">
-            <article class="card fl-left">
-              <section class="date">
-                <time datetime="23th feb">
-                  <span><?php echo $day; ?></span><span></span>
-                </time>
-              </section>
-              <section class="card-cont">
-                <small><?php echo $fullname; ?></small>
-                <h3><?php echo $movie_name; ?></h3>
-                <div class="even-date">
-                 <i class="fa fa-calendar"></i>
-                 <time>
-                   <span><?php echo $date; ?></span>
-                   <span><?php echo $time; ?></span>
-                 </time>
-                </div>
-                <div class="even-info">
-                  <i class="fa fa-map-marker"></i>
-                  <p>
-                  Seat ID: <?php echo $temp_seat_id; ?> 
-                  Seats: <?php echo $no_seat; ?> 
-                  </p>
-                </div>
-                <a href="#" class="aniBoo">Booked</a>
-              </section>
-            </article>
-          </div>
-        </div>
-</section>
-<br></br>
 
 </body>        
 <html>

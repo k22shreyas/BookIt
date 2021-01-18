@@ -16,8 +16,8 @@ while($row = mysqli_fetch_array($sql)){
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    body {
-  background-image: url("../DBMScopy/assets/images/best_wa.jpg") !important;
+   body {
+  background-image: url("../DBMScopy/assets/images/poster_wallblur.jpg") !important;
 }
 </style>
 </head>
@@ -129,7 +129,7 @@ function showSlides() {
 </head>
 <body>
 <br></br>
-<h1 style="text-align:center">Now screening</h1>
+<h1 style="text-align:center; color:white;">Now screening</h1>
 <?php
 $sql1 = mysqli_query($conn, "SELECT * FROM poster");
 while($row1 = mysqli_fetch_array($sql1)){
