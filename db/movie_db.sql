@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2021 at 08:06 PM
+-- Generation Time: Jan 20, 2021 at 07:31 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -156,7 +156,10 @@ INSERT INTO `seats` (`seat_id`, `date_time`, `movie_id`, `user_id`, `no_seat`) V
 (30, '2021-01-30 16:00:00', 20, 30, 2),
 (31, '2021-01-23 16:00:00', 19, 29, 1),
 (32, '2021-01-30 22:00:00', 27, 35, 3),
-(33, '2021-01-28 10:00:00', 30, 31, 2);
+(33, '2021-01-28 10:00:00', 30, 31, 2),
+(34, '2021-01-20 10:00:00', 30, 30, 7),
+(35, '2021-01-17 16:00:00', 21, 30, 4),
+(36, '2021-01-22 16:00:00', 20, 30, 6);
 
 -- --------------------------------------------------------
 
@@ -166,24 +169,18 @@ INSERT INTO `seats` (`seat_id`, `date_time`, `movie_id`, `user_id`, `no_seat`) V
 
 CREATE TABLE `snacks` (
   `seat_id` int(11) NOT NULL,
-  `snack_name` varchar(20) NOT NULL,
-  `snack_no` int(5) NOT NULL,
-  `snack_amt` int(11) NOT NULL DEFAULT 50
+  `snack_name` text NOT NULL,
+  `no_snack` int(11) NOT NULL,
+  `snack_amt` int(11) NOT NULL DEFAULT 100
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `snacks`
 --
 
-INSERT INTO `snacks` (`seat_id`, `snack_name`, `snack_no`, `snack_amt`) VALUES
-(30, 'popcorn', 2, 50),
-(30, 'drink', 1, 50),
-(31, 'popcorn', 1, 50),
-(31, 'drink', 2, 50),
-(32, 'popcorn', 0, 50),
-(32, 'drink', 0, 50),
-(33, 'popcorn', 1, 50),
-(33, 'drink', 0, 50);
+INSERT INTO `snacks` (`seat_id`, `snack_name`, `no_snack`, `snack_amt`) VALUES
+(35, 'popcorn/drink', 2, 50),
+(36, 'popcorn/drink', 1, 100);
 
 -- --------------------------------------------------------
 
@@ -227,16 +224,20 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `fullname`, `username`, `pword`, `phone`, `email`) VALUES
 (29, 'rajat raj', 'rajat', 0x71c8c2b58bfa448ce9480d0114b7c869, 73450395, 'gmail@rajat.com'),
-(30, 'shreyask', 'shreyas', 0xae6cf97f1d1e1d949b5e950798a7a283, 123456789, 'gmail@shreyas.com'),
+(30, 'shreyask', 'shreyas', 0x53687265796173, 123456789, 'gmail@shreyas.com'),
 (31, 'Parth Hero', 'parth', 0x41292f6584f1fc3f180724127186e5b1, 1234567890, 'parth@gmail.com'),
 (34, 'Shreyas Karanam', 'karanam22', 0xbe495b1d30d274fb2d4cd189b9129a75, 9742368019, 'shreyaskaranam22@gmail.com'),
-(35, 'pavan', 'pavan1234', 0x695450a7facc8b2c1c81cae7d2272f61, 1234567, 'pavan@gmail.com');
+(35, 'pavan', 'pavan1234', 0x68aa45e7cfc8d58d8b46291c207660a4, 1234567, 'pavan@gmail.com');
 
 --
 -- Triggers `user`
 --
 DELIMITER $$
 CREATE TRIGGER `pass_crypt` BEFORE INSERT ON `user` FOR EACH ROW SET new.pword := AES_ENCRYPT(new.pword,'kar')
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `reset_pass_crypt` BEFORE UPDATE ON `user` FOR EACH ROW SET new.pword := AES_ENCRYPT(new.pword,'kar')
 $$
 DELIMITER ;
 
@@ -305,7 +306,7 @@ ALTER TABLE `movie`
 -- AUTO_INCREMENT for table `seats`
 --
 ALTER TABLE `seats`
-  MODIFY `seat_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `seat_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `ticket`
