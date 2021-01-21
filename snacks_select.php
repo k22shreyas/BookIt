@@ -12,10 +12,8 @@ include('navbar1.html');
 <form action="snacksQ.php" method="POST">
 <h1>Choose Snacks</h1>
 <img src="assets/icons/popcorn1.png">
-<input type="number" class="snacks_select" min="0" max="5" name="pop_select" placeholder="0">
-<br></br>
 <img src="assets/icons/beverage1.png">
-<input type="number" class="snacks_select" min="0" max="5" name="drink_select" placeholder="0">
+<input type="number" class="snacks_select" min="0" max="5" name="snack_select" placeholder="0">
 <br></br>
 <input type="submit" value="select" class="uni-btn">
 </form>

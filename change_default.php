@@ -45,7 +45,7 @@ include('Admin_navbar1.html');
       <br></br>
       <input type="number" class="snacks_select s-l" name="snack_change" placeholder="100">
       <br></br>
-      <input style="margin-left:50px;" type="submit" value="change" class="uni-btn">
+      <input style="margin-left:50px;" type="submit" value="update" class="uni-btn">
     </form>
   </div>
 
@@ -56,7 +56,7 @@ include('Admin_navbar1.html');
       <br></br>
       <input type="number" class="snacks_select s-l" name="tax_change" placeholder="%">
       <br></br>
-      <input style="margin-left:50px;" type="submit" value="change" class="uni-btn">
+      <input style="margin-left:50px;" type="submit" value="update" class="uni-btn">
     </form>
   </div>
 </body>

@@ -38,7 +38,7 @@ $decrypt_pass = mysql_aes_decrypt($tmppass, $key);
   }
   else{
     // INCORRECT PASSWORD
-    $error_message = "Incorrect Username or Password.";
+    echo 'Incorrect Username or Password';
   }
 }
 else{

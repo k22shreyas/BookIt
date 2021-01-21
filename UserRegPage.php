@@ -9,9 +9,9 @@ session_start();
     <title>Movie and Chill</title>
   </head>
   <body>
-  <div class="user_login" style="margin:70px 0px 0px 120px;">  
+  <div class="user_login" style="margin:70px 0px 0px 140px; padding:10px;">  
 	<form action="UserRegQ.php" method="POST" class="inputform">
-  <img src="assets/icons/laptop-user.png"><br></br>
+  <img src="assets/icons/user1.png"><br></br>
   <input type="text" id="fullname" name="fullname" placeholder=" Fullname" required/>
   <input type="text" id="username" name="username" placeholder=" Username" required/><br><br>
   <input type="password" id="password" name="password" placeholder=" **********" required/>
@@ -22,7 +22,7 @@ session_start();
   <input type="submit" class="uni-btn" value="Register">
   </form>
 </div>
-<div class="login_info">
+<div class="login_info" style="margin-right:140px;">
 <form action="UserLogPage.php" class="inputform">
 <p style="margin-bottom:20px">Already an user?</p>
 <input type="submit" class="uni-btn" value="Login">

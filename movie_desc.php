@@ -17,7 +17,7 @@ while($row = mysqli_fetch_array($sql)){
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
    body {
-  background-image: url("../DBMScopy/assets/images/poster_wallblur.jpg") !important;
+  background-image: url("../DBMScopy/assets/images/100b.jpg") !important;
 }
 </style>
 </head>

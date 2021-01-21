@@ -21,7 +21,7 @@ include "db/dbcon.php";
     <input id="Description" name="Description" placeholder=" Description" required><br></br>
     <input id="Price" name="Price" placeholder=" Price" required><br></br>
     <input type="file" name="poster_img" id="filetype" style="font-size:14px" required><br></br>
-   <input type="submit" class="uni-btn" value=" Create">
+   <input type="submit" class="uni-btn" value="Add Movie">
 </form>
 </div>
   </body>
