@@ -54,13 +54,23 @@ $total_amt = $snack_netamt + $amt_for_seats;
 $sql3 = "INSERT INTO ticket(seat_id, total_net_amt) VALUES('$temp_seat_id', '$total_amt')";
  $result3=mysqli_query($conn, $sql3);
  if($result3){
+  $sts=1;
+  $sql4 = "INSERT INTO seats(sts) VALUES('$sts')";
+  $result4=mysqli_query($conn, $sql4);
+  if($result4){
   echo "<script>
   alert('Ticket booked successfully');
   window.location.href='movie_desc.php';
   </script>";
  }
+ else{
+  echo "Error: ". $sql4 ."". $conn->error;
+}
+}
 else{
   echo "Error: ". $sql3 ."". $conn->error;
 }
 $conn->close();
+/* ALTER TABLE `seats` ADD `sts` INT(11) NOT NULL AFTER `no_seat`; */
 ?>
+

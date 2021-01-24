@@ -6,7 +6,8 @@ include('Admin_navbar1.html');
 $sql = "SELECT movie.movie_name, user.username, seats.date_time, seats.no_seat, seats.seat_id
 FROM ((seats 
 INNER JOIN movie ON seats.movie_id = movie.movie_id) 
-INNER JOIN user ON seats.user_id = user.user_id)";
+INNER JOIN user ON seats.user_id = user.user_id)
+WHERE seats.sts=1";
 $result = mysqli_query($conn, $sql);
 
 ?>
