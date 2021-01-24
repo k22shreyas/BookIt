@@ -145,7 +145,8 @@ CREATE TABLE `seats` (
   `date_time` datetime NOT NULL,
   `movie_id` int(5) NOT NULL,
   `user_id` int(5) NOT NULL,
-  `no_seat` int(5) NOT NULL
+  `no_seat` int(5) NOT NULL,
+  `sts` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
