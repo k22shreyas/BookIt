@@ -323,7 +323,7 @@ ALTER TABLE `user`
 --
 -- Constraints for dumped tables
 --
-
+ALTER TABLE `seats` ADD `sts` INT(11) NOT NULL AFTER `no_seat`;
 --
 -- Constraints for table `poster`
 --
