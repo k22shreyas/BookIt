@@ -55,7 +55,7 @@ $sql3 = "INSERT INTO ticket(seat_id, total_net_amt) VALUES('$temp_seat_id', '$to
  $result3=mysqli_query($conn, $sql3);
  if($result3){
   $sts=1;
-  $sql4 = "INSERT INTO seats(sts) VALUES('$sts')";
+  $sql4 = "UPDATE seats SET sts = '$sts'";
   $result4=mysqli_query($conn, $sql4);
   if($result4){
   echo "<script>
@@ -71,6 +71,6 @@ else{
   echo "Error: ". $sql3 ."". $conn->error;
 }
 $conn->close();
-/* ALTER TABLE `seats` ADD `sts` INT(11) NOT NULL AFTER `no_seat`; */
+/* ALTER TABLE `seats` ADD `sts` INT(11) NOT NULL DEFAULT '0' AFTER `no_seat`; */
 ?>
 
