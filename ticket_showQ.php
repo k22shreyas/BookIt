@@ -30,7 +30,7 @@ if (mysqli_num_rows($result) > 0) {
 } else {
   echo "0 results";
 }
-$sql1 = "SELECT SUM(snack_no) AS items FROM snacks WHERE seat_id = '$temp_seat_id'";
+$sql1 = "SELECT SUM(no_snack) AS items FROM snacks WHERE seat_id = '$temp_seat_id'";
 $result1 = mysqli_query($conn,$sql1);
 if (mysqli_num_rows($result1) > 0) {
   while($row1 = mysqli_fetch_assoc($result1)) {
