@@ -15,13 +15,4 @@ Built mainly using
 
 ![css](https://github.com/shreyask22/DBMS-Project/blob/main/other/css.png?raw=true) ![js](https://github.com/shreyask22/DBMS-Project/blob/main/other/js.png?raw=true)
 
-Some screenshots
-
-![php](https://github.com/shreyask22/DBMS-Project/blob/main/other/shot1.png?raw=true)
-
-![php](https://github.com/shreyask22/DBMS-Project/blob/main/other/shot2.png?raw=true)
-
-![php](https://github.com/shreyask22/DBMS-Project/blob/main/other/shot3.png?raw=true)
-
-![php](https://github.com/shreyask22/DBMS-Project/blob/main/other/shot5.png?raw=true)
 
