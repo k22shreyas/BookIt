@@ -9,10 +9,8 @@ Instructions to follow while collaborating for this project:
 
 This project involves use of basic relational database concepts with examples of triggers and stored procedures
 
-Built mainly using 
+![html](https://github.com/shreyask22/DBMS-Project/blob/main/other/html.png?raw=true) ![js](https://github.com/shreyask22/DBMS-Project/blob/main/other/jscript.png?raw=true) ![css](https://github.com/shreyask22/DBMS-Project/blob/main/other/css.png?raw=true)
 
-![html](https://github.com/shreyask22/DBMS-Project/blob/main/other/html.png?raw=true) ![php](https://github.com/shreyask22/DBMS-Project/blob/main/other/php.png?raw=true) ![css](https://github.com/shreyask22/DBMS-Project/blob/main/other/css.png?raw=true)
-
-![mysql](https://github.com/shreyask22/DBMS-Project/blob/main/other/mysql.png?raw=true) ![js](https://github.com/shreyask22/DBMS-Project/blob/main/other/js.png?raw=true)
+![php](https://github.com/shreyask22/DBMS-Project/blob/main/other/php.png?raw=true) ![mysql](https://github.com/shreyask22/DBMS-Project/blob/main/other/mysql(1).png?raw=true)
 
 
