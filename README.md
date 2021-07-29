@@ -1,4 +1,4 @@
-# DBMS_Project
+# BookIt
 ![wallpaper](https://github.com/shreyask22/DBMS-Project/blob/main/other/poster_wall.jpg?raw=true)
 
 DBMS Project repository
